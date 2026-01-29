@@ -1,0 +1,94 @@
+/* Fuentes locales */
+@font-face {
+    font-family: 'MiluTitle';
+    src: url("fonts/Cream\ Cake.otf") format("woff"),
+         url("fonts/Cream\ Cake.otf") format("truetype");
+
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+
+}
+
+/* Estilos generales */
+body {
+  font-family: 'MiluTitle', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative; /* necesario para el pseudo-elemento */
+  height: 100vh;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("images/Fondo\ 1.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px); /* aquí aplicas el desenfoque */
+  z-index: -1; /* lo manda detrás del contenido */
+}
+
+header {
+    padding: 5px;
+    text-align: center;
+    font-size: 3.5em;
+}
+
+.icon {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 300px;
+    box-shadow: #3333339d 0px 4px 8px;
+
+}
+
+h1 {
+    font-size: 3.5em;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px #0000007d;
+    margin-bottom: 10px;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color:  rgb(255, 255, 255);              /* color base del texto */
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 4px #0000007d; /* sombra inicial */
+}
+
+.nav ul li a:hover {
+  color: #ee18ae;           /* cambia el color al pasar el mouse */
+  text-shadow: 0 0 10px rgb(106, 28, 22),
+               0 0 20px rgb(106, 28, 22),
+               0 0 30px rgb(106, 28, 22); /* efecto de brillo */
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1px;
+    background-color: rgb(106, 28, 22);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
