@@ -29,6 +29,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header {
@@ -40,36 +43,67 @@ header {
     display: flex;
     justify-content: center;
     width: 40%; /* relativo */
-    max-width: 250px;
+    max-width: 150px;
     height: auto;
     margin: 2rem auto;
     border-radius: 50%;
     box-shadow: #3333339d 0px 4px 8px;
 }
 
-nav.nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+/* Estilos base */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-family: 'CreamCakeBold', sans-serif;
+  font-size: 1.2rem;
+  color: rgb(106, 28, 22);
+}
+
+/* Checkbox oculto */
+.menu-toggle {
+  display: none;
+}
+
+/* Botón hamburger */
+.menu-icon {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: pink;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  /* Mostrar menú cuando el checkbox está marcado */
+  .menu-toggle:checked ~ .nav-links {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap; /* permite que se acomoden */
-}
+  }
 
-nav.nav ul li a {
-    font-family: 'CreamCakeBold', sans-serif;
-    text-decoration: none;
-    color: rgb(106, 28, 22);
-    font-weight: bold;
-    font-size: 2rem; /* relativo */
-    background-color: rgb(255, 124, 131);
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-}
-
-nav.nav ul li a:hover {
-    box-shadow: rgb(106, 28, 22) 0px 1px 6px, rgb(106, 28, 22) 0px 1px 4px;
+  .menu-icon {
+    display: block;
+  }
 }
 
 .contenedor {
@@ -121,7 +155,7 @@ p.Parrafo {
 
 .producto img {
     padding: 0.5rem;
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     border-radius: 20px;
     box-shadow: #3333339d 0px 4px 8px;
